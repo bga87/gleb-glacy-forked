@@ -1,7 +1,7 @@
-# Личный проект «{{projectTitle}}»
+# Личный проект «Глейси»
 
-* Студент: [{{userName}}]({{userProfile}}).
-* Наставник: `Неизвестно`.
+* Студент: [Глеб Беспалов](https://htmlacademy.ru/profile/id1250645).
+* Наставник: [Михаил Данюшин](https://htmlacademy.ru/profile/id225742).
 
 ---
 
@@ -18,7 +18,7 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 
 #### 2. Создайте форк
 
-[Откройте мастер-репозиторий]({{homepage}}) и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии скопируется в ваш аккаунт.
+[Откройте мастер-репозиторий](https://github.com/summertime-fms/gleb-glacy) и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии скопируется в ваш аккаунт.
 
 <img width="769" alt="" src="https://user-images.githubusercontent.com/10909/29037742-a62a72a0-7bad-11e7-9f36-4db8e9329498.jpg">
 

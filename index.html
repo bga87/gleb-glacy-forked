@@ -15,31 +15,31 @@
             <button class="navigation-button-menu" type="button">Каталог</button>
             <ul class="navigation-menu-list">
               <li class="navigation-menu-item">
-                <a class="navigation-menu-link button navigation-menu-link-flashy" href="#">Новинки</a>
+                <a class="navigation-menu-link navigation-menu-link-flashy" href="#">Новинки</a>
               </li>
               <li class="navigation-menu-item">
-                <a class="navigation-menu-link button" href="#">Сливочное</a>
+                <a class="navigation-menu-link" href="#">Сливочное</a>
               </li>
               <li class="navigation-menu-item">
-                <a class="navigation-menu-link button" href="#">Щербеты</a>
+                <a class="navigation-menu-link" href="#">Щербеты</a>
               </li>
               <li class="navigation-menu-item">
-                <a class="navigation-menu-link button" href="#">Фруктовый лед</a>
+                <a class="navigation-menu-link" href="#">Фруктовый лед</a>
               </li>
               <li class="navigation-menu-item">
-                <a class="navigation-menu-link button" href="#">Мелорин</a>
+                <a class="navigation-menu-link" href="#">Мелорин</a>
               </li>
             </ul>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link button" href="#">Доставка и оплата</a>
+            <a class="navigation-link" href="#">Доставка и оплата</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link button" href="#">О компании</a>
+            <a class="navigation-link" href="#">О компании</a>
           </li>
         </ul>
       </nav>
-      <a class="header-phone-link" href="tel:+78005558628" >+7 800 555-86-28</a>
+      <a class="header-phone-link" href="tel:+78005558628">+7 800 555-86-28</a>
       <ul class="header-action-list">
         <li class="header-action-item">
           <button class="header-action-button button-search" type="button"><span class="visually-hidden">Поиск</span></button>
@@ -55,7 +55,65 @@
     <main class="main-index">
       <h1 class="visually-hidden">Магазин мороженого &laquo;Глейси&raquo;</h1>
       <section class="hero">
-        <!-- Сверстать позже-->
+        <h2 class="visually-hidden">Примеры продукции</h2>
+        <ul class="product-slider-list">
+          <li class="product-slider-item product-slider-item-current">
+            <h3 class="product-slider-title">Нежный пломбир с клубничным джемом</h3>
+            <p class="product-slider-description">Натуральное мороженое из свежих сливок и молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи. </p>
+            <img class="product-slider-image" src="#" alt="Пломбир с клубничным джемом в вафельном рожке">
+          </li>
+          <li class="product-slider-item">
+            <h3 class="product-slider-title">Сливочное мороженое со вкусом банана</h3>
+            <p class="product-slider-description">Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день.</p>
+            <img class="product-slider-image" src="#" alt="Мороженое со вкусом банана в вафельном рожке">
+          </li>
+          <li class="product-slider-item">
+            <h3 class="product-slider-title">Карамельный пломбир с маршмеллоу</h3>
+            <p class="product-slider-description">Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
+            <img class="product-slider-image" src="#" alt="Пломбир с маршмеллоу в вафельном рожке">
+          </li>
+        </ul>
+        <button class="product-slider-button slider-prev" type="button">
+          <span class="visually-hidden">Предыдущий слайд</span>
+        </button>
+        <button class="product-slider-button slider-next" type="button">
+          <span class="visually-hidden">Следующий слайд</span>
+        </button>
+        <a class="button-link" href="#">Заказать</a>
+        <ol class="slider-pagination">
+          <li class="slider-pagination-item">
+            <button class="slider-pagination-button slider-pagination-button-current" type="button">
+              <span class="visually-hidden">1 слайд</span>
+            </button>
+          </li>
+          <li class="slider-pagination-item">
+            <button class="slider-pagination-button" type="button">
+              <span class="visually-hidden">2 слайд</span>
+            </button>
+          </li>
+          <li class="slider-pagination-item">
+            <button class="slider-pagination-button" type="button">
+              <span class="visually-hidden">3 слайд</span>
+            </button>
+          </li>
+        </ol>
+        <ul class="hero-social-list">
+          <li class="hero-social-item">
+            <a class="social-button-link" href="https://t.me/htmlacademy">
+              <span class="visually-hidden">Телеграм</span>
+            </a>
+          </li>
+          <li class="hero-social-item">
+            <a class="social-button-link" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">Вконтакте</span>
+            </a>
+          </li>
+          <li class="hero-social-item">
+            <a class="social-button-link" href="https://www.youtube.com/user/htmlacademyru">
+              <span class="visually-hidden">Ютьюб</span>
+            </a>
+          </li>
+        </ul>
       </section>
       <section class="gift-promo">
         <h2 class="visually-hidden">Подарочные акции</h2>
@@ -65,13 +123,13 @@
             <h3 class="gift-promo-title">Малинка даром!</h3>
             <p class="gift-promo-description">При покупке 2 кг любого фруктового мороженого добавим в ваш заказ банку малинового варенья бесплатно.</p>
             <img class="gift-promo-image" src="#" alt="Вафельный рожок, наполненный ягодами малины">
-            <a class="gift-promo-link button" href="#">Хочу подарок</a>
+            <a class="button-link" href="#">Хочу подарок</a>
           </li>
           <li class="gift-promo-item">
             <h3 class="gift-promo-title">Маршмеллоу даром!</h3>
             <p class="gift-promo-description">При покупке 2 кг пломбира добавим в ваш заказ упаковку нежных зефирок совершенно бесплатно.</p>
             <img class="gift-promo-image" src="#" alt="Вафельный рожок, наполненный маршмеллоу">
-            <a class="gift-promo-link button" href="#">Хочу подарок</a>
+            <a class="button-link" href="#">Хочу подарок</a>
           </li>
         </ul>
       </section>
@@ -81,7 +139,7 @@
         <ul class="product-list">
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="#">
+              <img class="product-card-image" src="#" alt="">
               <h3 class="product-card-title">Малинка</h3>
               <p class="product-card-description">Сливочное мороженое с малиновым джемом</p>  
             </a>
@@ -92,7 +150,7 @@
           </li>
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="#">
+              <img class="product-card-image" src="#" alt="">
               <h3 class="product-card-title">Фисташка</h3>
               <p class="product-card-description">Фисташковый пломбир с кусочками шоколада</p>  
             </a>
@@ -103,7 +161,7 @@
           </li>
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="#">
+              <img class="product-card-image" src="#" alt="">
               <h3 class="product-card-title">Черника</h3>
               <p class="product-card-description">Крем-брюле с черничным джемом</p>  
             </a>
@@ -114,7 +172,7 @@
           </li>
           <li class="product-card">
             <a class="product-card-link" href="#">
-              <img class="product-card-image" src="#">
+              <img class="product-card-image" src="#" alt="">
               <h3 class="product-card-title">Бабл-гам</h3>
               <p class="product-card-description">Ванильный пломбир со сладкой посыпкой</p>  
             </a>
@@ -143,8 +201,10 @@
           </li>
         </ul>
       </section>
-      <article>
-        <!-- Сверстать позже-->
+      <article class="blog-excerpt">
+        <span class="blog-excerpt-hint">Новое в нашем блоге</span>
+        <a class="blog-excerpt-link" href="#"><h2>10 способов сервировки фруктовых щербетов к столу</h2></a> 
+        <img class="blog-excerpt-image" src="#" alt="Три шарика мороженого сервированные на тарелке с ягодами">
       </article>
       <section class="newsletter">
         <h2 class="visually-hidden">Подписка на рассылку</h2>
@@ -153,6 +213,36 @@
           <input class="form-field" type="email" name="newsletter-email" placeholder="email@example.com" required>
           <button class="send-form-button" type="submit">Отправить</button>
         </form>
+      </section>
+      <section class="delivery">
+        <h2 class="delivery-title">Доставка любимого мороженого на дом</h2>
+        <p class="delivery-text">Хочется полакомиться любимым десертом, но нет времени съездить в магазин? Закажите доставку мороженого на дом, и курьер привезёт вам ваш заказ в течение часа!</p>
+        <form class="delivery-form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="delivery-form-date">
+            <label class="form-label" for="delivery-date">Дата</label>
+            <input id="delivery-date" type="text" name="delivery-date" placeholder="01.04.2020">  
+          </p>
+          <p class="delivery-form-phone">
+            <label class="form-label" for="delivery-phone">Телефон</label>
+            <input id="delivery-phone" type="text" name="delivery-phone" placeholder="+7 800 999-00-00">  
+          </p>
+          <p class="delivery-form-address">
+            <label class="form-label" for="delivery-address">Адрес</label>
+            <input id="delivery-address" type="text" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">  
+          </p>
+          <button class="send-form-button" type="submit">Отправить</button>
+        </form>
+      </section>
+      <section class="contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <address class=contacts-info>
+          Адрес главного офиса и офлайн-магазина:
+          <p class=contacts-address>наб. реки Карповки, 5 лит П, Санкт-Петербург</p>
+          Для заказов по телефону:
+          <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+          <span class="working-hours-text">(с <time datetime="10:00">10</time> до <time datetime="20:00">20</time> ежедневно)</span>
+        </address>
+        <button class="feedback-button" type="button">Форма обратной связи</button>
       </section>
     </main>
   </body>

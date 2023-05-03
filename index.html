@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Магазин мороженого &laquo;Глейси&raquo;</title>
   </head>
   <body>
@@ -101,17 +102,17 @@
         </ol>
         <ul class="social-list">
           <li class="social-item">
-            <a class="link-button link-telegram" href="https://t.me/htmlacademy" target="_blank">
+            <a class="link-telegram" href="https://t.me/htmlacademy" target="_blank">
               <span class="visually-hidden">Телеграм</span>
             </a>
           </li>
           <li class="social-item">
-            <a class="link-button link-vk" href="https://vk.com/htmlacademy" target="_blank">
+            <a class="link-vk" href="https://vk.com/htmlacademy" target="_blank">
               <span class="visually-hidden">Вконтакте</span>
             </a>
           </li>
           <li class="social-item">
-            <a class="link-button link-youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
+            <a class="link-youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
               <span class="visually-hidden">Ютьюб</span>
             </a>
           </li>
@@ -140,44 +141,36 @@
         <p class="lead-text">Попробуйте самые популярные вкусы нашего мороженого</p>
         <ul class="product-list">
           <li class="product-card">
-            <a class="product-card-link" href="#">
-              <img src="images/catalog/catalog-raspberry.png" width="168" height="168" alt="" loading="lazy" decoding="async">
-              <h3>Малинка</h3>
-              <p>Сливочное мороженое с малиновым джемом</p>  
-            </a>
+            <img src="images/catalog/catalog-raspberry.png" width="168" height="168" alt="" loading="lazy" decoding="async">
+            <h3>Малинка</h3>
+            <p>Сливочное мороженое с малиновым джемом</p>  
             <b class="product-price">310 ₽/кг</b>
             <button>
               <span class="visually-hidden">Добавить в корзину</span>
             </button>
           </li>
           <li class="product-card">
-            <a class="product-card-link" href="#">
-              <img src="images/catalog/catalog-pistachio.png" width="168" height="168" alt="" loading="lazy" decoding="async">
-              <h3>Фисташка</h3>
-              <p>Фисташковый пломбир с кусочками шоколада</p>  
-            </a>
+            <img src="images/catalog/catalog-pistachio.png" width="168" height="168" alt="" loading="lazy" decoding="async">
+            <h3>Фисташка</h3>
+            <p>Фисташковый пломбир с кусочками шоколада</p>  
             <b class="product-price">340 ₽/кг</b>
             <button>
               <span class="visually-hidden">Добавить в корзину</span>
             </button>
           </li>
           <li class="product-card">
-            <a class="product-card-link" href="#">
-              <img src="images/catalog/catalog-blueberry.png" width="168" height="168" alt="" loading="lazy" decoding="async">
-              <h3>Черника</h3>
-              <p>Крем-брюле с черничным джемом</p>  
-            </a>
+            <img src="images/catalog/catalog-blueberry.png" width="168" height="168" alt="" loading="lazy" decoding="async">
+            <h3>Черника</h3>
+            <p>Крем-брюле с черничным джемом</p>  
             <b class="product-price">330 ₽/кг</b>
             <button>
               <span class="visually-hidden">Добавить в корзину</span>
             </button>
           </li>
           <li class="product-card">
-            <a class="product-card-link" href="#">
-              <img src="images/catalog/catalog-bubble_gum.png" width="168" height="168" alt="" loading="lazy" decoding="async">
-              <h3>Бабл-гам</h3>
-              <p>Ванильный пломбир со сладкой посыпкой</p>  
-            </a>
+            <img src="images/catalog/catalog-bubble_gum.png" width="168" height="168" alt="" loading="lazy" decoding="async">
+            <h3>Бабл-гам</h3>
+            <p>Ванильный пломбир со сладкой посыпкой</p>  
             <b class="product-price">320 ₽/кг</b>
             <button>
               <span class="visually-hidden">Добавить в корзину</span>
@@ -187,13 +180,15 @@
       </section>
       <section class="about">
         <h2 class="visually-hidden">О нас</h2>
-        <p class="lead-text">Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес</p>
-        <ul class="feature-list">
-          <li class="feature-item">Всё наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</li>
-          <li class="feature-item">Для приготовления мороженого используются сливки и молоко высочайшего качества. Все ингредиенты и добавки произведены из натурального сырья.</li>
-          <li class="feature-item">Закупка ингредиентов производится только у проверенных фермерских хозяйств, с которыми нас связывает долговременное сотрудничество.</li>
-          <li class="feature-item">Доставка нашего мороженого осуществляется в специальном термопаке, который не даёт мороженому растаять и позволяет сохранить превосходный вкус.</li>
-        </ul>
+        <div class="about-content">
+          <p class="lead-text">Магазин Глейси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес</p>
+          <ul class="feature-list">
+            <li>Всё наше мороженое изготавливается на собственном производстве с использованием современного оборудования и проверенных временем технологий.</li>
+            <li>Для приготовления мороженого используются сливки и молоко высочайшего качества. Все ингредиенты и добавки произведены из натурального сырья.</li>
+            <li>Закупка ингредиентов производится только у проверенных фермерских хозяйств, с которыми нас связывает долговременное сотрудничество.</li>
+            <li>Доставка нашего мороженого осуществляется в специальном термопаке, который не даёт мороженому растаять и позволяет сохранить превосходный вкус.</li>
+          </ul>
+        </div>
       </section>
       <article class="blog-excerpt">
         <span class="blog-excerpt-hint">Новое в нашем блоге</span>
@@ -203,58 +198,65 @@
         <img class="blog-excerpt-image" src="images/serving.jpg" width="570" height="224" alt="Три шарика мороженого сервированные на тарелке с ягодами" loading="lazy" decoding="async">
       </article>
       <section class="newsletter">
-        <h2 class="visually-hidden">Подписка на рассылку</h2>
-        <p class="newsletter-text">Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-        <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
-          <input class="email-input" type="email" name="newsletter-email" placeholder="email@example.com" required>
-          <button class="send-form-button" type="submit">Отправить</button>
-        </form>
+        <div class="newsletter-content">
+          <h2 class="visually-hidden">Подписка на рассылку</h2>
+          <p class="newsletter-text">Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+          <form class="newsletter-form" action="https://echo.htmlacademy.ru" method="post">
+            <input class="email-input" type="email" name="newsletter-email" placeholder="email@example.com" required>
+            <button class="send-form-button" type="submit">Отправить</button>
+          </form>
+        </div>
       </section>
       <section class="delivery">
         <h2 class="delivery-title">Доставка любимого мороженого на дом</h2>
         <p class="delivery-text">Хочется полакомиться любимым десертом, но нет времени съездить в магазин? Закажите доставку мороженого на дом, и курьер привезёт вам ваш заказ в течение часа!</p>
-        <form class="delivery-form" action="https://echo.htmlacademy.ru" method="post">
-          <p class="delivery-form-date">
-            <label for="delivery-date">Дата</label>
-            <input id="delivery-date" type="text" name="delivery-date" placeholder="01.04.2020">  
-          </p>
-          <p class="delivery-form-phone">
-            <label for="delivery-phone">Телефон</label>
-            <input id="delivery-phone" type="tel" name="delivery-phone" placeholder="+7 800 999-00-00" pattern="(\+7|8)\s?(\([0-9]{3}\)|[0-9]{3})\s?[0-9]{3}(\s|-)?[0-9]{2}(\s|-)?[0-9]{2}">  
-          </p>
-          <p class="delivery-form-address">
-            <label for="delivery-address">Адрес</label>
-            <input id="delivery-address" type="text" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">  
-          </p>
-          <button class="send-form-button" type="submit">Отправить</button>
-        </form>
+        <div class="delivery-form-plate">
+          <p class="delivery-text">Укажите адрес и дату доставки, и мы свяжемся с вами, чтобы подтвердить заказ.</p>
+          <form class="delivery-form" action="https://echo.htmlacademy.ru" method="post">
+            <p class="delivery-form-date">
+              <label for="delivery-date">Дата</label>
+              <input id="delivery-date" type="text" name="delivery-date" placeholder="01.04.2020">  
+            </p>
+            <p class="delivery-form-phone">
+              <label for="delivery-phone">Телефон</label>
+              <input id="delivery-phone" type="tel" name="delivery-phone" placeholder="+7 800 999-00-00" pattern="(\+7|8)\s?(\([0-9]{3}\)|[0-9]{3})\s?[0-9]{3}(\s|-)?[0-9]{2}(\s|-)?[0-9]{2}">  
+            </p>
+            <p class="delivery-form-address">
+              <label for="delivery-address">Адрес</label>
+              <input id="delivery-address" type="text" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">  
+            </p>
+            <button class="send-form-button" type="submit">Отправить</button>
+          </form>
+        </div>
       </section>
       <section class="contacts">
         <h2 class="visually-hidden">Контакты</h2>
-        <address>
-          Адрес главного офиса и офлайн-магазина:
-          <p class=contacts-address>наб. реки Карповки, 5 лит П, Санкт-Петербург</p>
-          Для заказов по телефону:
-          <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-          <span class="working-hours-text">(с <time datetime="10:00">10</time> до <time datetime="20:00">20</time> ежедневно)</span>
-        </address>
-        <button class="feedback-button" type="button">Форма обратной связи</button>
+        <div class="contacts-plate">
+          <address>
+            Адрес главного офиса и офлайн-магазина:
+            <p class="contacts-location">наб. реки Карповки, 5 лит П, Санкт-Петербург</p>
+            Для заказов по телефону:
+            <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+            <span class="working-hours">(с <time datetime="10:00">10</time> до <time datetime="20:00">20</time> ежедневно)</span>
+          </address>
+          <button class="feedback-button" type="button">Форма обратной связи</button>
+        </div>
       </section>
     </main>
     <footer class="footer">
       <ul class="social-list">
         <li class="social-item">
-          <a class="link-button link-telegram" href="https://t.me/htmlacademy" target="_blank">
+          <a class="link-telegram" href="https://t.me/htmlacademy" target="_blank">
             <span class="visually-hidden">Телеграм</span>
           </a>
         </li>
         <li class="social-item">
-          <a class="link-button link-vk" href="https://vk.com/htmlacademy" target="_blank">
+          <a class="link-vk" href="https://vk.com/htmlacademy" target="_blank">
             <span class="visually-hidden">Вконтакте</span>
           </a>
         </li>
         <li class="social-item">
-          <a class="link-button link-youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
+          <a class="link-youtube" href="https://www.youtube.com/user/htmlacademyru" target="_blank">
             <span class="visually-hidden">Ютьюб</span>
           </a>
         </li>

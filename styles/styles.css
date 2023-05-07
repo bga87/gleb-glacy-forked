@@ -22,8 +22,15 @@
     font-display: swap;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 html {
     height: 100%;
+    box-sizing: border-box;
 }
 
 body {
@@ -182,7 +189,6 @@ body {
 
 .gift-promo-item {
     background: #FF7799;
-    box-sizing: border-box;
     width: 570px;
     padding-left: 36px;
 }
@@ -228,14 +234,12 @@ body {
 }
 
 .about-content {
-    box-sizing: border-box;
     width: 1122px;
     padding: 56px 40px;
     background: #FFFFFF;
 }
 
 .feature-list {
-    width: 1042px;
     margin: 0;
     padding: 0;
     display: flex;
@@ -272,7 +276,6 @@ body {
 }
 
 .newsletter {
-    box-sizing: border-box;
     width: 570px;
     padding: 6px;
     background-image: url("../images/background/stripes.png");
@@ -333,7 +336,6 @@ body {
 }
 
 .delivery .plate {
-    box-sizing: border-box;
     width: 500px;
     padding: 40px 40px 42px;
 }
@@ -351,7 +353,6 @@ body {
 }
 
 .contacts .plate {
-    box-sizing: border-box;
     width: 343px;
     padding: 40px 40px 42px;
 }

@@ -347,6 +347,7 @@ button {
     height: 150px;
     margin-top: 183px;
     order: 0;
+    opacity: 0.4;
 }
 
 .slider-image-thumbnail:not(:last-child) {
@@ -356,7 +357,6 @@ button {
 .slider-image-thumbnail img {
     width: 100%;
     height: 100%;
-    opacity: 0.4;
     object-fit: contain;
 }
 
@@ -398,8 +398,16 @@ button {
 
 .slider-button:active {
     box-shadow: none;
-    background: rgba(252, 252, 252, 0.5);
+    background-color: rgba(252, 252, 252, 0.5);
     color:#2D3440;
+}
+
+.slider-button:disabled {
+    box-shadow: inset 0 0 0 2px #FCFCFC;
+    background-color: rgba(252, 252, 252, 0.3);
+    opacity: 0.4;
+    cursor: default;
+    color: #FCFCFC;
 }
 
 .slider-prev {
@@ -435,7 +443,16 @@ button {
     width: 12px;
     height: 12px;
     border: 0;
-    border-radius: 50%;;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.pagination-button-current {
+    opacity: 1;
+}
+
+.pagination-button:hover {
+    
 }
 
 .link-button {
@@ -444,14 +461,42 @@ button {
     display: inline-block;
     padding: 12px 32px;
     color: #2D3440;
-    background: #FCFCFC;
-    background-clip: padding-box;
+    background-color: #FCFCFC;
+/*    background-clip: padding-box;*/
     text-decoration: none;
     text-align: center;
-    border: 4px solid rgba(252, 252, 252, 0.4);
+/*    border: 4px solid rgba(252, 252, 252, 0.4);*/
+    outline: 4px solid rgba(252, 252, 252, 0.4);
+    box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
     border-radius: 26px;
-    margin-left: -4px;
+/*    margin-left: -4px;*/
 }
+
+.link-button:hover {
+    background-color: rgba(252, 252, 252, 0.4);
+    outline-color: #FCFCFC;
+    box-shadow: 0px 4px 15px rgba(133, 133, 133, 0.15);
+}
+
+.link-button:focus-visible {
+    background-color: rgba(252, 252, 252, 0.5);
+    outline: 2px solid #2D3440;
+    outline-offset: 0;
+}
+
+@supports not selector(:focus-visible) {
+    .link-button:focus {
+        background-color: rgba(252, 252, 252, 0.5);
+        outline: 2px solid #2D3440;
+        outline-offset: 0;
+    }
+}
+
+.link-button:active {
+    background-color: #FCFCFC;
+    outline: 2px solid #2D3440;
+}
+
 
 .lead-text {
     color: #2D3440;

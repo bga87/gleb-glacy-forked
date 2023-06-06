@@ -585,12 +585,8 @@ button {
 .product-card img {
     display: block;
     margin: -51px auto 16px auto;
-    box-shadow: 0 2px 3px #B9B9B9;
+    box-shadow: 0 4px 10px 0 rgba(45, 52, 64, 0.1);
     border-radius: 50%;
-}
-
-.product-card button {
-    padding: 8px;
 }
 
 .product-card .bottom-container {
@@ -617,10 +613,15 @@ button {
 
 .product-card button {
     background: #FF2F64;
+/*    padding: 8px;*/
     width: 32px;
     height: 32px;
     border-radius: 50%;
     border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FCFCFC;
 }
 
 .about {
@@ -928,7 +929,18 @@ button {
 .social-item a:hover {
     outline: 2px solid rgba(252, 252, 252, 0.5);
     background-color: #2D3440;
-    
+}
+
+.social-item a:focus-visible {
+    outline-offset: 0;
+    outline-color: #2D3440;
+    background-color: #2D3440;
+}
+
+.social-item a:active {
+    outline: 2px solid rgba(252, 252, 252, 0.5);
+    background-color: #2D3440;
+    opacity: 0.5;
 }
 
 .link-telegram {

@@ -897,6 +897,9 @@ button {
     line-height: 20px;
     color: #2D3440;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
 }
 
 .delivery-form .delivery-form-date {
@@ -905,6 +908,14 @@ button {
 
 .delivery-form .delivery-form-address {
     margin-top: 20px;
+}
+
+.delivery-form-date label::after,
+.delivery-form-address label::after {
+    content: url("../images/form/info.svg");
+    width: 16px;
+    height: 16px;
+    transform: scale(0.875);
 }
 
 .delivery-form-date input {
@@ -1060,6 +1071,18 @@ button {
 
 .link-favourite {
     font-weight: 700;
+    position: relative;
+}
+
+.link-favourite::before {
+    content: url("../images/icons/heart-fill.svg");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -24px;
+    width: 16px;
+    height: 16px;
+    margin: auto 0;
 }
 
 .developer-logo {
@@ -1071,6 +1094,10 @@ button {
     line-height: 16px;
     margin: 0;
     margin-top: 14px;
+}
+
+.copyright-text a {
+    border-bottom: 1px solid rgba(45, 52, 64, 0.5);
 }
 
 .catalog-header {

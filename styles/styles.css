@@ -170,10 +170,6 @@ button {
     font-weight: 700;
 }
 
-.phone-link:focus-visible {
-    outline: solid 2px #2D3440;
-}
-
 .action-list li:not(:last-child) {
     margin-right: 16px;
 }
@@ -464,7 +460,6 @@ button {
     background-clip: padding-box;
     text-decoration: none;
     text-align: center;
-    /* outline: 4px solid rgba(252, 252, 252, 0.4); */
     border: 4px solid rgba(252, 252, 252, 0.4);
     box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
     border-radius: 26px;
@@ -555,7 +550,7 @@ button {
 }
 
 .gift-promo-item .link-button {
-    min-width: 184px;
+    padding-left: 33px;
 }
 
 .popular .lead-text {
@@ -622,6 +617,16 @@ button {
     border-radius: 50%;
 }
 
+/* Для предзагрузки темной иконки */
+.product-card button:after {
+    content: url("../images/icons/cart_dark.svg");
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    z-index: -1;
+}
+
 .product-card button:hover {
     background-color: rgba(252, 252, 252, 0.3);
     background-image: url("../images/icons/cart_dark.svg");
@@ -677,7 +682,7 @@ button {
     min-width: 48px;
     height: 48px;
     border-radius: 50%;
-    box-shadow: inset 0 0 0 2px #2D3440;
+    border: 2px solid #2D3440;
 }
 
 .feature-list li:nth-child(1)::before {
@@ -800,36 +805,37 @@ button {
     font-weight: 700;
     line-height: 20px;
     padding: 12px 32px;
-    margin: 4px;
     max-width: 100%;
     color: #FCFCFC;
     background-color: #FF2F64;
-    border: none;
+    background-clip: padding-box;
+    border: 4px solid rgba(255, 47, 100, 0.3);
     border-radius: 26px;
     box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
-    outline: 4px solid rgba(255, 47, 100, 0.3);
 }
 
 .send-form-button:hover,
 .feedback-button:hover {
     background-color: rgba(252, 252, 252, 0.3);
     color: #2D3440;
-    outline-color: #FF2F64;
+    border-color: #FF2F64;
     box-shadow: none;
 }
 
 .send-form-button:focus-visible,
 .feedback-button:focus-visible {
-    outline-offset: 0;
-    outline: 2px solid #2D3440;
+    border: 2px solid #2D3440;
+    margin: 2px;
     color: #FCFCFC;
     background-color: #FF2F64;
     box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+    outline: none;
 }
 
 .send-form-button:active,
 .feedback-button:active {
-    outline: 2px solid #2D3440;
+    border: 2px solid #2D3440;
+    margin: 2px;
     color: #FCFCFC;
     background-color: #FEAFC3;
     box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
@@ -906,6 +912,7 @@ button {
 
 .delivery-form .delivery-form-address {
     margin-top: 20px;
+    margin-bottom: 28px;
 }
 
 .delivery-form-date label::after,
@@ -928,11 +935,6 @@ button {
     width: 420px;
 }
 
-.delivery-form .send-form-button,
-.feedback-button {
-    margin-top: 28px;
-}
-
 .contacts {
     padding: 64px;
     background-image: url("../images/background/cones-in-holder.jpg");
@@ -950,7 +952,7 @@ button {
 
 .contacts address {
     font-style: inherit;
-    margin: 0 4px;
+    margin: 0 4px 28px;
 }
 
 .contacts-location,
@@ -1017,13 +1019,13 @@ button {
 }
 
 .social-item a:focus-visible {
-    outline-offset: 0;
-    outline-color: #2D3440;
+    border-color: #2D3440;
     background-color: #2D3440;
+    outline: none;
 }
 
 .social-item a:active {
-    outline: 2px solid rgba(252, 252, 252, 0.5);
+    border-color: rgba(252, 252, 252, 0.5);
     background-color: #2D3440;
     opacity: 0.5;
 }
@@ -1175,12 +1177,12 @@ button {
     line-height: 20px;
     background: rgba(252, 252, 252, 0.3);
     appearance: none;
-    padding: 8px 29px 8px 16px;
-    border: 0;
+    padding: 6px 27px 6px 14px;
+    border: 2px solid transparent;
     border-radius: 20px;
     background-image: url("../images/form/arrow-down.svg");
     background-repeat: no-repeat;
-    background-position: right 13px center;
+    background-position: right 11px center;
 }
 
 .select-control:hover {
@@ -1189,12 +1191,8 @@ button {
 
 .select-control:focus-visible {
     background-color: rgba(252, 252, 252, 0.4);
-    box-shadow: inset 0 0 0 2px #FCFCFC;   
+    border-color: #FCFCFC;   
     outline: none;
-}
-
-.select-control option {
-    color: #2D3440;
 }
 
 .filter-group {
@@ -1245,26 +1243,30 @@ button {
     font-family: inherit;
     color: inherit;
     background-color: rgba(252, 252, 252, 0.3);
-    margin-left: 16px;
+    background-clip: padding-box;
+    margin-left: 14px;
     padding: 8px 32px;
-    width: 185px;
-    border: none;
-    outline: 2px solid #FCFCFC;
+    width: 189px;
+    border: 2px solid #FCFCFC;
     border-radius: 20px;
+    text-indent: -1px;
 }
 
 .filter button:hover {
-    outline-color: rgba(252, 252, 252, 0.3);
+    border-color: rgba(252, 252, 252, 0.3);
     background-color: #FCFCFC;
 }
 
 .filter button:focus-visible {
-    outline-color: #2D3440;
+    border-color: #2D3440;
     background-color: rgba(252, 252, 252, 0.3);
+    outline: none;
 }
 
 .filter button:active {
-    outline: none;
+    border: none;
+    margin: 2px 0 2px 16px;
+    width: 185px;
     background-color: rgba(252, 252, 252, 0.5);
 }
 

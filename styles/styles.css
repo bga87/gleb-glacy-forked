@@ -275,7 +275,7 @@ body {
 
 .slider-right-half {
     padding-top: 21px;
-    padding-left: 19px;
+    padding-left: 20px;
     position: relative;
 }
 
@@ -306,31 +306,14 @@ body {
     position: relative;
 }
 
-.slider-image-list li::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 0;
-    padding-top: 100%;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(252, 252, 252, 0.3);
-    z-index: -1;
-    border-radius: 50%;
-}
-
-.slider-image-list .slider-image-current::before {
-    height: 312px;
-    padding-top: 0;
-}
-
 .slider-image-current {
-    margin-right: 62px;
+    margin-right: 57px;
     order: -1;
+}
+
+.slider-image-current img {
+    width: 327px;
+    object-fit: cover;
 }
 
 .slider-image-thumbnail {
@@ -338,27 +321,53 @@ body {
     height: 150px;
     margin-top: 183px;
     order: 0;
-    opacity: 0.4;
 }
 
 .slider-image-thumbnail:not(:last-child) {
-    margin-right: 35px;
+    margin-right: 41px;
 }
 
 .slider-image-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    opacity: 0.4;
 }
 
-.slider-image-current img {
+.slider-image-list li::before {
+    content: "";
     display: block;
+    width: 100%;
+    position: absolute;
+    background-color: #FFCBD8;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.slider-image-current::before {
+    height: 312px;
+    top: 100px;
+}
+
+.slider-image-thumbnail::before {
+    height: 0;
+    padding-top: 100%;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.4;
+}
+
+.slider-buttons-container {
+    position: absolute;
+    top: 258px;
+    width: 327px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .slider-button {
     padding: 0;
-    position: absolute;
-    top: 258px;
     width: 38px;
     height: 38px;
     border: 2px solid #FCFCFC;
@@ -369,6 +378,14 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.slider-prev {
+    transform: translateX(-48%);
+}
+
+.slider-next {
+    transform: translateX(48%);
 }
 
 .slider-button:hover {
@@ -402,14 +419,6 @@ body {
     opacity: 0.4;
     cursor: default;
     color: #FCFCFC;
-}
-
-.slider-prev {
-    left: 2px;
-}
-
-.slider-next {
-    left: 327px;
 }
 
 .hero .bottom-container {

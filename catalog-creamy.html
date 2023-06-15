@@ -90,6 +90,23 @@
                 <option value="alphabet">по алфавиту</option>
               </select>
             </p>
+            <fieldset class="filter-group">
+              <legend>Цена:</legend>
+              <span class="range-inputs">
+                <label class="visually-hidden" for="price-from">от</label>
+                <input type="number" name="price-from" id="price-from"> &#8381; - 
+                <label class="visually-hidden" for="price-to" id="price-to">до</label>
+                <input type="number" name="price-to"> &#8381;
+              </span>
+              <div class="range-scale">
+                <div class="range-bar">
+                  <button class="range-toggle toggle-min">
+                  </button>
+                  <button class="range-toggle toggle-max">
+                  </button>
+                </div>
+              </div>
+            </fieldset>
             <fieldset class="filter-group filter-fat">
               <legend>Жирность:</legend>
               <ul class="filter-list">

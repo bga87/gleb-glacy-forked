@@ -91,7 +91,7 @@ body {
 }
 
 .logo-link {
-    margin-right: 17px;
+    margin-right: 16px;
 }
 
 .logo-link img {
@@ -116,15 +116,14 @@ body {
     color: inherit;
     cursor: pointer;
     border: 2px solid transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .menu-button {
     padding: 6px 14px 6px 14px;
     background-color: transparent;
     border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .header button:not(.active-popup-button):hover,
@@ -163,7 +162,7 @@ body {
 
 .phone-link {
     margin-left: auto;
-    margin-right: 18px;
+    margin-right: 16px;
     font-weight: 700;
 }
 
@@ -192,7 +191,7 @@ body {
 }
 
 .dropdown-arrow-icon {
-    margin-left: 6px;
+    margin-left: 7px;
 }
 
 .active-popup-button .dropdown-arrow-icon {
@@ -201,7 +200,8 @@ body {
 
 .log-in-icon, 
 .cart-icon {
-    margin-right: 6px;
+    margin-right: 7px;
+    vertical-align: sub;
 }
 
 .header .active-popup-button {
@@ -246,21 +246,24 @@ body {
     flex-grow: 1;
 }
 
-.main-container > section:not(:last-child),
-.main-container > div:not(:last-child),
-.main-container > article:not(:last-child) {
+.main-container .hero {
+    margin-bottom: 78px;
+}
+
+.main-container .gift-promo {
+    margin-bottom: 81px;
+}
+
+.main-container .popular,
+.main-container .about,
+.main-container .blog-excerpt,
+.main-container .newsletter,
+.main-container .delivery {
     margin-bottom: 80px;
 }
 
 .hero {
     color: #2D3440;
-}
-
-.hero ol,
-.hero ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
 }
 
 .slider-container {
@@ -279,6 +282,12 @@ body {
     position: relative;
 }
 
+.slider-text-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
 .slider-text-item h3 {
     font-weight: 900;
     font-size: 36px;
@@ -295,6 +304,9 @@ body {
 }
 
 .slider-image-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
     display: flex;
 }
 
@@ -428,8 +440,11 @@ body {
 }
 
 .hero .slider-pagination {
-    display: flex;
+    margin: 0;
     margin-bottom: 2px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
 }
 
 .slider-pagination .pagination-item {
@@ -531,6 +546,10 @@ body {
     color: #2D3440;
 }
 
+.gift-promo .lead-text {
+    margin-bottom: 55px;
+}
+
 .gift-promo-list {
     margin: 0;
     padding: 0;
@@ -564,14 +583,6 @@ body {
 
 .gift-promo-item p {
     margin: 28px 0 24px;
-}
-
-.gift-promo-item .link-button {
-    padding-left: 33px;
-}
-
-.popular .lead-text {
-    margin-bottom: 56px;
 }
 
 .product-list {
@@ -760,7 +771,7 @@ body {
 .blog-excerpt-hint {
     line-height: 20px;
     display: block;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 }
 
 .blog-excerpt-link {
@@ -843,6 +854,7 @@ body {
 .email-input::placeholder,
 .delivery-form input::placeholder {
     color: #B9B9B9;
+    opacity: 1;
 }
 
 .send-form-button, 
@@ -851,7 +863,7 @@ body {
     font-size: inherit;
     font-weight: 700;
     line-height: 20px;
-    padding: 12px 32px;
+    padding: 12px 33px 12px 32px;
     max-width: 100%;
     color: #FCFCFC;
     background-color: #FF2F64;
@@ -1068,6 +1080,11 @@ body {
     margin-right: -2px;
 }
 
+.footer .social-list {
+    margin-left: -2px;
+    margin-top: -2px;
+}
+
 .social-item a {
     display: block;
     border: 2px solid rgba(252, 252, 252, 0.3);
@@ -1120,6 +1137,7 @@ body {
     font-size: 14px;
     line-height: 20px;
     margin: 0;
+    margin-left: -1px;
     padding: 0;
     list-style-type: none;
     width: 356px;
@@ -1157,11 +1175,7 @@ body {
     content: url("../images/icons/heart-fill.svg");
     position: absolute;
     top: 0;
-    bottom: 0;
     left: -24px;
-    width: 16px;
-    height: 16px;
-    margin: auto 0;
 }
 
 .developer-logo {

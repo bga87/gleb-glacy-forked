@@ -90,50 +90,58 @@
                 <option value="alphabet">по алфавиту</option>
               </select>
             </p>
-            <fieldset class="filter-group">
-              <legend>Цена:</legend>
-              <span class="range-inputs">
-                <label class="visually-hidden" for="price-from">от</label>
-                <input type="number" name="price-from" id="price-from"> &#8381; - 
-                <label class="visually-hidden" for="price-to" id="price-to">до</label>
-                <input type="number" name="price-to"> &#8381;
-              </span>
-              <div class="range-scale">
-                <div class="range-bar">
-                  <button class="range-toggle toggle-min">
-                  </button>
-                  <button class="range-toggle toggle-max">
-                  </button>
+            <fieldset class="filter-group filter-price">
+              <legend>Цена:
+                <label>
+                  <span class="visually-hidden">от</span>
+                  <input type="number"name="price-from" value="100">₽
+                </label>-
+                <label>
+                  <span class="visually-hidden">до</span>
+                  <input type="number" name="price-to" value="500">₽
+                </label>
+              </legend>
+              <div class="range-slider-container">
+                <div class="range-slider">
+                  <div class="range-slice" style="margin-left: 40px; width: 56px">
+                    <button type="button" class="range-toggle toggle-min">
+                      <span class="visually-hidden">Изменить минимальную цену</span>
+                    </button>
+                    <button type="button" class="range-toggle toggle-max">
+                      <span class="visually-hidden">Изменить максимальную цену</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </fieldset>
             <fieldset class="filter-group filter-fat">
               <legend>Жирность:</legend>
               <ul class="filter-list">
-                <li class="filter-item">
-                  <label>
-                    <input class="radio-input" type="radio" name="fat-content" value="0">
-                    0%
+                <!-- <li class="filter-item">
+                  <label class="control">
+                    <input class="visually-hidden radio-input" type="radio" name="fat-content" value="0">
+                    <span>0%</span>
                   </label>
-                </li>
+                </li> -->
                 <li class="filter-item">
                   <label class="control">
-                    <input class="radio-input" type="radio" name="fat-content" value="10-">
-                    до 10%
+                    <input class="visually-hidden radio-input" type="radio" name="fat-content" value="10-">
+                    <button type="button" class="custom-radio-button"></button>
+                    <span>до 10%</span> 
                   </label>
                 </li>
-                <li class="filter-item">
+                <!-- <li class="filter-item">
                   <label class="control">
-                    <input class="radio-input" type="radio" name="fat-content" value="30-">
+                    <input class="visually-hidden radio-input" type="radio" name="fat-content" value="30-">
                     до 30%
                   </label>
                 </li>
                 <li class="filter-item">
-                  <label>
-                    <input class="radio-input" type="radio" name="fat-content" value="30+">
+                  <label class="control">
+                    <input class="visually-hidden radio-input" type="radio" name="fat-content" value="30+">
                     выше 30%
                   </label>
-                </li>
+                </li> -->
               </ul>
             </fieldset>
             <fieldset class="filter-group filter-filler">
@@ -171,7 +179,7 @@
                 </li>
               </ul>
             </fieldset>
-            <button type="submit">Применить</button>
+            <button class="filter-submit-button" type="submit">Применить</button>
           </form>
           <ol class="product-list">
             <li class="product-card">

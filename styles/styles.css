@@ -1249,20 +1249,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     row-gap: 16px;
-    align-items: flex-end;
     margin-bottom: 44px;
     width: 823px;
 }
 
 .filter-sort {
-    display: flex;
-    flex-direction: column;
     width: 196px;
     margin: 0;
 }
 
 .filter-sort label {
-    align-self: flex-start;
+    display: inline-block;
     margin-bottom: 8px;
     margin-left: 16px;
 }
@@ -1274,6 +1271,7 @@ body {
     line-height: 20px;
     background: rgba(252, 252, 252, 0.3);
     appearance: none;
+    width: 100%;
     padding: 6px 27px 6px 14px;
     border: 2px solid transparent;
     border-radius: 20px;
@@ -1300,14 +1298,20 @@ body {
     }
 }
 
-
 .filter-group {
     border: 0;
     padding: 0;
+    margin: 0;
     display: flex;
 }
 
+.filter-group.filter-fat,
+.filter-group.filter-price {
+    margin-left: 24px;
+}
+
 .filter-group legend {
+    padding: 0;
     margin-bottom: 8px;
     margin-left: 16px;
 }
@@ -1316,16 +1320,119 @@ body {
     margin: 0;
 }
 
+.filter-price {
+    width: 196px;
+    flex-wrap: wrap;
+}
+
+.filter-price input {
+    width: 29px;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    appearance: textfield;
+}
+
+.filter-price input::-webkit-inner-spin-button,
+.filter-price input::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.range-slider-container {
+    padding: 17px 16px;
+    background-color: rgba(252, 252, 252, 0.3);
+    border-radius: 20px;
+}
+
+.range-slider {
+    width: 164px;
+    height: 2px;
+    background-color: rgba(86, 92, 102, 0.3);
+    border-radius: 1px;
+}
+
+.range-slice {
+    max-width: 148px;
+    height: 100%;
+    background-color: rgb(86, 92, 102);
+    position: relative;
+}
+
+.range-toggle {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: #2D3440;
+    background-clip: padding-box;
+    cursor: pointer;
+    position: absolute;
+    top: -9px;
+}
+
+.toggle-min {
+    left: -18px;
+}
+
+.toggle-max {
+    right: -18px;
+}
+
+.range-toggle::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #FCFCFC;
+    margin: 0 auto;
+}
+
+.range-toggle:hover {
+    background-color: #FCFCFC;
+}
+
+.range-toggle:hover::before,
+.range-toggle:focus-visible::before,
+.range-toggle:active::before {
+    background-color: #2D3440;
+}
+
+.range-toggle:focus-visible {
+    background-color: #FCFCFC;
+    border-color: #2D3440;
+    outline: none;   
+}
+
+@supports not selector(:focus-visible) {
+    .range-toggle:focus {
+        background-color: #FCFCFC;
+        border-color: #2D3440;
+        outline: none;   
+    }    
+
+    .range-toggle:focus::before {
+        background-color: #2D3440;
+    }    
+}
+
+.range-toggle:active {
+    background-color: #2D3440;
+    border-color: transparent;   
+}
+
 .filter-list {
     background: rgba(252, 252, 252, 0.3);
     margin: 0;
     padding: 0 24px;
     list-style-type: none;
+    border-radius: 18px;
     display: flex;
-}
-
-.filter-fat {
-    margin-left: 24px;
+    column-gap: 16px;
 }
 
 .filter-fat .filter-list {
@@ -1333,16 +1440,34 @@ body {
     padding-bottom: 8px;
 }
 
+.control {
+    position: relative;
+    padding-left: 24px;
+}
+
+.custom-radio-button {
+    width: 16px;
+    height: 16px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background-image: url("../images/form/radio-empty.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
 .filter-filler .filter-list {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.filter-item:not(:last-child) {
+/*.filter-item:not(:last-child) {
     margin-right: 16px;
-}
+}*/
 
-.filter button {
+.filter-submit-button {
     font-weight: 700;
     line-height: inherit;
     font-size: inherit;
@@ -1353,32 +1478,33 @@ body {
     margin-left: 14px;
     padding: 8px 32px;
     width: 189px;
+    align-self: flex-end;
     border: 2px solid #FCFCFC;
     border-radius: 20px;
     text-indent: -1px;
     cursor: pointer;
 }
 
-.filter button:hover {
+.filter-submit-button:hover {
     border-color: rgba(252, 252, 252, 0.3);
     background-color: #FCFCFC;
 }
 
-.filter button:focus-visible {
+.filter-submit-button:focus-visible {
     border-color: #2D3440;
     background-color: rgba(252, 252, 252, 0.3);
     outline: none;
 }
 
 @supports not selector(:focus-visible) {
-    .filter button:focus {
+    .filter-submit-button:focus {
        border-color: #2D3440;
         background-color: rgba(252, 252, 252, 0.3);
         outline: none;
     }
 }
 
-.filter button:active {
+.filter-submit-buttonactive {
     border: none;
     margin: 2px 0 2px 16px;
     width: 185px;

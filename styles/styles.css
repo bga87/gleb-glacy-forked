@@ -636,7 +636,7 @@ body {
 
 .product-card button {
     background-color: #FF2F64;
-    background-image: url("../images/icons/cart_light.svg");
+    background-image: url("../images/icons/cart-light.svg");
     background-repeat: no-repeat;
     background-position: center;
     width: 32px;
@@ -648,7 +648,8 @@ body {
 
 /* Для предзагрузки темной иконки */
 .product-card button:after {
-    content: url("../images/icons/cart_dark.svg");
+    content: url("../images/icons/cart-dark.svg");
+    content: url("../images/form/radio-empty-light.svg");
     position: absolute;
     width: 0px;
     height: 0px;
@@ -658,12 +659,12 @@ body {
 
 .product-card button:hover {
     background-color: rgba(252, 252, 252, 0.3);
-    background-image: url("../images/icons/cart_dark.svg");
+    background-image: url("../images/icons/cart-dark.svg");
 }
 
 .product-card button:focus-visible {
     border-color: #2D3440;
-    background-image: url("../images/icons/cart_light.svg");
+    background-image: url("../images/icons/cart-light.svg");
     background-color: #FF2F64;
     outline: none;
 }
@@ -671,7 +672,7 @@ body {
 @supports not selector(:focus-visible) {
     .product-card button:focus {
         border-color: #2D3440;
-        background-image: url("../images/icons/cart_light.svg");
+        background-image: url("../images/icons/cart-light.svg");
         background-color: #FF2F64;
         outline: none;
     }    
@@ -679,7 +680,7 @@ body {
 
 .product-card button:active {
     border-color: #FF2F64;
-    background-image: url("../images/icons/cart_dark.svg");
+    background-image: url("../images/icons/cart-dark.svg");
     background-color: #FFCBD8;
 }
 
@@ -1445,18 +1446,63 @@ body {
     padding-left: 24px;
 }
 
-.custom-radio-button {
+.radio-marker {
+    display: inline-block;
     width: 16px;
     height: 16px;
     border: none;
-    padding: 0;
+    padding: 5px;
     margin: 0;
+    margin-right: 8px;
     border-radius: 50%;
-    background-image: url("../images/form/radio-empty.svg");
+    background-image: url("../images/form/radio-empty-dark.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
+    vertical-align: text-bottom;
 }
+
+.radio-marker:hover,
+.radio-marker:focus-visible {
+    background-image: url("../images/form/radio-empty-light.svg");
+    outline: none;
+}
+
+@supports not selector(::focus-visible) {
+    .radio-marker:focus {
+        background-image: url("../images/form/radio-empty-light.svg");
+        outline: none;
+    }
+}
+
+.radio-input:disabled ~ .radio-marker {
+    background-image: url("../images/form/radio-empty-dark.svg");
+    opacity: 0.5;
+}
+
+
+.radio-input:checked:not(:disabled) ~ .radio-marker::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #2D3440;
+}
+
+.radio-input:checked:not(:disabled) ~ .radio-marker:hover::before,
+.radio-input:checked:not(:disabled) ~ .radio-marker:focus-visible::before {
+    background-color: #FCFCFC;
+    outline: none;
+}
+
+@supports not selector(:::focus-visible) {
+    .radio-input:checked:not(:disabled) ~ .radio-marker:focus::before {
+        background-color: #FCFCFC;
+        outline: none;
+    }
+}
+
 
 .filter-filler .filter-list {
     padding-top: 10px;

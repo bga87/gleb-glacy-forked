@@ -63,11 +63,39 @@
             </button>
           </li>
           <li class="action-item">
-            <button class="button-show-cart" type="button">
+            <button class="button-show-cart " type="button">
               <svg class="cart-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.1667 1.25a.6667.6667 0 0 0 0 1.3333h1.7712l.4675 2.3354a.664.664 0 0 0 .0106.0531l.9674 4.8333.0001.0006a1.8254 1.8254 0 0 0 1.8183 1.4691h5.6207a1.8256 1.8256 0 0 0 1.8185-1.4697l.001-.005.9271-4.8614a.6669.6669 0 0 0-.6549-.7915H4.6107l-.4726-2.3614a.6667.6667 0 0 0-.6537-.5358H1.1667ZM5.691 9.5444l-.8134-4.0639h8.2308l-.7756 4.0669a.4923.4923 0 0 1-.4918.3942v-.0001H6.1962v-.0001l-.0128.0002a.4922.4922 0 0 1-.4922-.3962l-.0002-.001Zm-1.1336 3.961c0-.6879.5577-1.2457 1.2457-1.2457.688 0 1.2457.5578 1.2457 1.2457 0 .688-.5577 1.2457-1.2457 1.2457-.688 0-1.2457-.5577-1.2457-1.2457Zm6.3733 0c0-.6879.5577-1.2457 1.2457-1.2457.688 0 1.2457.5578 1.2457 1.2457 0 .688-.5577 1.2457-1.2457 1.2457-.688 0-1.2457-.5577-1.2457-1.2457Z"/>
               </svg>2 товара
             </button>
+            <div class="popover popover-cart">
+              <h2 class="popover-title">Корзина</h2>
+              <ul class="cart-items-list">
+                <li class="cart-item">
+                  <h3>Малинка</h3>
+                  <img src="images/catalog/catalog-raspberry.png" width="46" height="46" alt="" loading="lazy" decoding="async">
+                  <span class="cart-item-amount">1 кг х 310 ₽</span>
+                  <!-- <p class="item-description">
+                    
+                    <img src="images/catalog/catalog-raspberry.phg" width="46" height="46" alt="" loading="lazy" decoding="async">
+                    <span>1 кг х 310 ₽</span>
+                  </p> -->
+                  <span class="cart-item-price">310 ₽</span>
+                  <button class="cart-delete-button"><span class="visually-hidden">Удалить товар<span></button>
+                </li>
+                <li class="cart-item">
+                  <h3>Бабл-гам</h3>
+                  <img src="images/catalog/catalog-bubble_gum.png" width="46" height="46" alt="" loading="lazy" decoding="async">
+                  <span class="cart-item-amount">1,5 кг х 320 ₽</span>
+                  <span class="cart-item-price">480 ₽</span>
+                  <button class="cart-delete-button"><span class="visually-hidden">Удалить товар<span></button>
+                </li>
+              </ul>
+              <div class="cart-bottom-container">
+                <button type="button" class="cart-purchase-button">Оформить заказ</button>
+                <p class="cart-total-price">Итого: 790 ₽</p>
+              </div>
+            </div>
           </li>
         </ul>
       </header>

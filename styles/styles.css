@@ -646,10 +646,9 @@ body {
     cursor: pointer;
 }
 
-/* Для предзагрузки темной иконки */
-.product-card button:after {
+/* Предзагрузка светлой иконки для смены состояний */
+.product-card button:before {
     content: url("../images/icons/cart-dark.svg");
-    content: url("../images/form/radio-empty-light.svg");
     position: absolute;
     width: 0px;
     height: 0px;
@@ -1303,7 +1302,10 @@ body {
     border: 0;
     padding: 0;
     margin: 0;
-    display: flex;
+}
+
+.filter-filler {
+/*    width: 604px;*/
 }
 
 .filter-group.filter-fat,
@@ -1442,12 +1444,11 @@ body {
 }
 
 .control {
-    position: relative;
-    padding-left: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .radio-marker {
-    display: inline-block;
     width: 16px;
     height: 16px;
     border: none;
@@ -1459,7 +1460,16 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
-    vertical-align: text-bottom;
+}
+
+/* Предзагрузка светлой иконки для смены состояний */
+.radio-marker::before {
+    content: url("../images/form/radio-empty-light.svg");
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .radio-marker:hover,
@@ -1481,7 +1491,7 @@ body {
 }
 
 
-.radio-input:checked:not(:disabled) ~ .radio-marker::before {
+.radio-input:checked:not(:disabled) ~ .radio-marker::after {
     content: "";
     display: block;
     width: 6px;
@@ -1490,28 +1500,78 @@ body {
     background-color: #2D3440;
 }
 
-.radio-input:checked:not(:disabled) ~ .radio-marker:hover::before,
-.radio-input:checked:not(:disabled) ~ .radio-marker:focus-visible::before {
+.radio-input:checked:not(:disabled) ~ .radio-marker:hover::after,
+.radio-input:checked:not(:disabled) ~ .radio-marker:focus-visible::after {
     background-color: #FCFCFC;
     outline: none;
 }
 
 @supports not selector(:::focus-visible) {
-    .radio-input:checked:not(:disabled) ~ .radio-marker:focus::before {
+    .radio-input:checked:not(:disabled) ~ .radio-marker:focus::after {
         background-color: #FCFCFC;
         outline: none;
     }
 }
 
+.checkbox-marker {
+    width: 16px;
+    height: 16px;
+    border: none;
+    margin: 0;
+    margin-right: 8px;
+    background-image: url("../images/form/checkbox-empty-dark.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+/* Предзагрузка светлой иконки для смены состояний */
+.checkbox-marker::before {
+    content: url("../images/form/checkbox-empty-light.svg");
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.checkbox-marker:hover,
+.checkbox-marker:focus-visible {
+    background-image: url("../images/form/checkbox-empty-light.svg");
+    outline: none;
+}
+
+@supports not selector(::focus-visible) {
+    .checkbox-marker:focus {
+        background-image: url("../images/form/checkbox-empty-light.svg");
+        outline: none;
+    }
+}
+
+.checkbox-input:disabled ~ .checkbox-marker {
+    background-image: url("../images/form/checkbox-empty-dark.svg");
+    opacity: 0.5;
+}
+
+.checkbox-input:checked:not(:disabled) ~ .checkbox-marker {
+    background-image: url("../images/form/checkbox-checked-dark.svg");
+}
+
+.checkbox-input:checked:not(:disabled) ~ .checkbox-marker:hover,
+.checkbox-input:checked:not(:disabled) ~ .checkbox-marker:focus-visible {
+    background-image: url("../images/form/checkbox-checked-light.svg");
+}
+
+@supports not selector(::focus-visible) {
+    .checkbox-input:checked:not(:disabled) ~ .checkbox-marker:focus {
+        background-image: url("../images/form/checkbox-checked-light.svg");
+    }
+}
 
 .filter-filler .filter-list {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
-/*.filter-item:not(:last-child) {
-    margin-right: 16px;
-}*/
 
 .filter-submit-button {
     font-weight: 700;
@@ -1521,7 +1581,7 @@ body {
     color: inherit;
     background-color: rgba(252, 252, 252, 0.3);
     background-clip: padding-box;
-    margin-left: 14px;
+    margin-left: 16px;
     padding: 8px 32px;
     width: 189px;
     align-self: flex-end;
@@ -1643,13 +1703,13 @@ body {
     justify-content: flex-end;
 }
 
-.catalog-pagination-item a {
+.pagination-link {
     display: block;
     text-decoration: none;
     color: #2D3440;
 }
 
-.page-number-link {
+.pagination-number {
     width: 100%;
     height: 100%;
     border: 1px solid transparent;
@@ -1657,41 +1717,40 @@ body {
     text-align: center;
 }
 
-.pagination-prev-link,
-.pagination-next-link {
+.pagination-prev,
+.pagination-next {
     width: 16px;
     height: 16px;
+    background-image: url("../images/icons/arrow-right.svg");
     background-repeat: no-repeat;
     background-position: center;
+    border: 1px solid transparent;
+    border-radius: 50%;
 }
 
-.pagination-prev-link {
-    background-image: url("../images/icons/arrow-left.svg");
+.pagination-prev {
+    transform: rotate(180deg);
 }
 
-.pagination-next-link {
-    background-image: url("../images/icons/arrow-right.svg");
-}
-
-.page-number-link:not(.current-page-link):hover {
+.pagination-link:not(.pagination-current-page):hover {
     background-color: rgba(252, 252, 252, 0.5);
 }
 
-.page-number-link:not(.current-page-link):focus-visible {
+.pagination-link:not(.pagination-current-page):focus-visible {
     background-color: rgba(252, 252, 252, 0.3);
     border-color: #2D3440;
     outline: none;
 }
 
 @supports not selector(:focus-visible) {
-    .page-number-link:not(.current-page-link):focus {
+    .pagination-link:not(.pagination-current-page):focus {
         background-color: rgba(252, 252, 252, 0.3);
         border-color: #2D3440;
         outline: none;
     }    
 }
 
-.page-number-link:not(.current-page-link):active {
+.pagination-link:not(.pagination-current-page):active {
     background-color: rgba(252, 252, 252, 0.5);
     border-color: #FCFCFC;
 }
@@ -1700,6 +1759,6 @@ body {
     opacity: 0.3;
 }
 
-.current-page-link {
+.pagination-current-page {
     background: #FCFCFC;
 }

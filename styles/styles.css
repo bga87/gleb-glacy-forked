@@ -258,9 +258,11 @@ body {
     border-radius: 4px;
 }
 
-.signin-button {
-    margin-top: 16px;
-    align-self: flex-start;
+.signin-bottom-container {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    column-gap: 19px;
 }
 
 .signin-links-container {
@@ -271,13 +273,14 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    position: absolute;
-    bottom: 52px;
-    left: 184px;
 }
 
 .signin-links-container a {
     border-bottom: 1px solid #2D3440;;
+}
+
+.signin-links-container a:hover {
+    text-shadow: 0 0 1px #2D3440;
 }
 
 .menu-button,
@@ -1030,6 +1033,42 @@ body {
     opacity: 1;
 }
 
+.email-input:hover,
+.delivery-form input:hover,
+.signin-form input:hover {
+    border-color: #2D3440;
+}
+
+.email-input:focus-visible,
+.delivery-form input:focus-visible,
+.signin-form input:focus-visible {
+    padding: 12px 14px;
+    border: 2px solid #2D3440;
+}
+
+@supports not selector(:focus-visible) {
+    .email-input:focus,
+    .delivery-form input:focus,
+    .signin-form input:focus {
+        padding: 12px 14px;
+        border: 2px solid #2D3440;
+    }
+}
+
+.email-input:disabled,
+.delivery-form input:disabled,
+.signin-form input:disabled {
+    background-color: #E7E7E7;
+    border-color: #B9B9B9;
+    color: rgba(45, 52, 64, 0.65);
+}
+
+.email-input:disabled:hover,
+.delivery-form input:disabled:hover,
+.signin-form input:disabled:hover {
+    color: rgba(45, 52, 64, 1);
+}
+
 .send-form-button, 
 .feedback-button {
     font-family: inherit;
@@ -1049,7 +1088,8 @@ body {
 
 .send-form-button:hover,
 .feedback-button:hover,
-.cart-purchase-button:hover {
+.cart-purchase-button:hover,
+.signin-button:hover {
     background-color: rgba(252, 252, 252, 0.3);
     color: #2D3440;
     border-color: #FF2F64;
@@ -1058,7 +1098,8 @@ body {
 
 .send-form-button:focus-visible,
 .feedback-button:focus-visible,
-.cart-purchase-button:focus-visible {
+.cart-purchase-button:focus-visible,
+.signin-button:focus-visible {
     border: 2px solid #2D3440;
     margin: 2px;
     color: #FCFCFC;
@@ -1070,7 +1111,8 @@ body {
 @supports not selector(:focus-visible) {
     .send-form-button:focus,
     .feedback-button:focus,
-    .cart-purchase-button:focus {
+    .cart-purchase-button:focus,
+    .signin-button:focus {
         border: 2px solid #2D3440;
         margin: 2px;
         color: #FCFCFC;
@@ -1082,7 +1124,8 @@ body {
 
 .send-form-button:active,
 .feedback-button:active,
-.cart-purchase-button:active {
+.cart-purchase-button:active,
+.signin-button:active {
     border: 2px solid #2D3440;
     margin: 2px;
     color: #FCFCFC;
@@ -1143,6 +1186,7 @@ body {
 .delivery-form p {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     margin: 0;
 }
 
@@ -1163,6 +1207,7 @@ body {
 .delivery-form .delivery-form-address {
     margin-top: 20px;
     margin-bottom: 28px;
+    width: 100%;
 }
 
 .delivery-form-date label::after,
@@ -1182,7 +1227,7 @@ body {
 }
 
 .delivery-form-address input {
-    width: 420px;
+    align-self: stretch;
 }
 
 .contacts {
@@ -1479,10 +1524,6 @@ body {
     border: 0;
     padding: 0;
     margin: 0;
-}
-
-.filter-filler {
-/*    width: 604px;*/
 }
 
 .filter-group.filter-fat,

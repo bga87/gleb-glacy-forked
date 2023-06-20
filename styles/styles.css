@@ -133,6 +133,18 @@ body {
     padding: 48px 48px 44px 44px;
 }
 
+.popover-cart-empty {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    width: 288px;
+    text-align: center;
+}
+
+.popover-cart-empty p {
+    margin: 48px 0;
+}
+
 .popover h2 {
     margin: 0 0 32px 4px;
     font-weight: 700;
@@ -201,7 +213,8 @@ body {
     align-items: center;
 }
 
-.cart-purchase-button {
+.cart-purchase-button,
+.signin-button {
     font-family: inherit;
     font-size: 16px;
     font-weight: 700;
@@ -221,6 +234,50 @@ body {
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
+}
+
+.popover-signin {
+    width: 420px;
+    padding: 48px 48px 48px 44px;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.signin-form input {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2D3440;
+    margin-left: 4px;
+    padding: 13px 15px;
+    border: 1px solid #B9B9B9;
+    border-radius: 4px;
+}
+
+.signin-button {
+    margin-top: 16px;
+    align-self: flex-start;
+}
+
+.signin-links-container {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    position: absolute;
+    bottom: 52px;
+    left: 184px;
+}
+
+.signin-links-container a {
+    border-bottom: 1px solid #2D3440;;
 }
 
 .menu-button,
@@ -967,7 +1024,8 @@ body {
 }
 
 .email-input::placeholder,
-.delivery-form input::placeholder {
+.delivery-form input::placeholder,
+.signin-form input::placeholder {
     color: #B9B9B9;
     opacity: 1;
 }

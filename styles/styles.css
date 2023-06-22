@@ -266,7 +266,8 @@ body {
 }
 
 .cart-purchase-button,
-.signin-button {
+.signin-button,
+.feedback-submit-button {
     font-family: inherit;
     font-size: 16px;
     font-weight: 700;
@@ -1127,7 +1128,9 @@ body {
 .email-input::placeholder,
 .delivery-form input::placeholder,
 .signin-form input::placeholder,
-.search-form input::placeholder {
+.search-form input::placeholder,
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
     color: #B9B9B9;
     opacity: 1;
 }
@@ -1135,13 +1138,17 @@ body {
 .email-input:hover,
 .delivery-form input:hover,
 .signin-form input:hover,
-.search-form input:hover {
+.search-form input:hover,
+.feedback-form input:hover,
+.feedback-form textarea:hover {
     border-color: #2D3440;
 }
 
 .email-input:focus-visible,
 .delivery-form input:focus-visible,
-.signin-form input:focus-visible {
+.signin-form input:focus-visible,
+.feedback-form input:focus-visible,
+.feedback-form textarea:focus-visible {
     padding: 12px 14px;
     border: 2px solid #2D3440;
     outline: none;
@@ -1150,7 +1157,9 @@ body {
 @supports not selector(:focus-visible) {
     .email-input:focus,
     .delivery-form input:focus,
-    .signin-form input:focus {
+    .signin-form input:focus,
+    .feedback-form input:focus,
+    .feedback-form textarea:focus {
         padding: 12px 14px;
         border: 2px solid #2D3440;
         outline: none;
@@ -1201,7 +1210,8 @@ body {
 .send-form-button:hover,
 .feedback-button:hover,
 .cart-purchase-button:hover,
-.signin-button:hover {
+.signin-button:hover,
+.feedback-submit-button:hover {
     background-color: rgba(252, 252, 252, 0.3);
     color: #2D3440;
     border-color: #FF2F64;
@@ -1211,7 +1221,8 @@ body {
 .send-form-button:focus-visible,
 .feedback-button:focus-visible,
 .cart-purchase-button:focus-visible,
-.signin-button:focus-visible {
+.signin-button:focus-visible,
+.feedback-submit-button:focus-visible {
     border: 2px solid #2D3440;
     margin: 2px;
     color: #FCFCFC;
@@ -1224,7 +1235,8 @@ body {
     .send-form-button:focus,
     .feedback-button:focus,
     .cart-purchase-button:focus,
-    .signin-button:focus {
+    .signin-button:focus,
+    .feedback-submit-button:focus {
         border: 2px solid #2D3440;
         margin: 2px;
         color: #FCFCFC;
@@ -1237,7 +1249,8 @@ body {
 .send-form-button:active,
 .feedback-button:active,
 .cart-purchase-button:active,
-.signin-button:active {
+.signin-button:active,
+.feedback-submit-button:active {
     border: 2px solid #2D3440;
     margin: 2px;
     color: #FCFCFC;
@@ -1545,10 +1558,11 @@ body {
     position: relative;
     width: 570px;
     margin: auto;
-    padding: 32px 32px 62px 64px;
+    padding: 64px 58px 62px 64px;
     background: #FCFCFC;
     box-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
     border-radius: 8px;
+    color: #2D3440;
 }
 
 .modal-close-button {
@@ -1559,14 +1573,65 @@ body {
     height: 16px;
     padding: 0;
     border: none;
+    border-radius: 4px;
     background-color: transparent;
     background-image: url("../images/form/cross.svg");
     background-position: center;
     background-repeat: no-repeat;
     transform: scale(1.25);
     cursor: pointer;
+    transition: transform 0.8s;
 }
 
+.modal-close-button:hover,
+.modal-close-button:focus-visible {
+    background-color: rgba(255, 74, 120, 0.2);
+    transform: scale(1.75);
+}
+
+.modal-feedback-text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #2D3440;
+    margin: 0 0 32px;
+}
+
+.feedback-form {
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.feedback-form p {
+    margin: 0;
+    display: flex;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    padding: 13px 15px;
+    border: 1px solid #B9B9B9;
+    border-radius: 4px;
+    margin: 0 6px 0 0;
+    flex-grow: 1;
+}
+
+.feedback-form textarea {
+    height: 149px;
+    margin-bottom: 12px;
+    resize: none;
+}
+
+.feedback-submit-button {
+    align-self: flex-end;
+}
 
 .catalog-header {
     color: #2D3440;

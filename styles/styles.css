@@ -94,8 +94,31 @@ body {
     margin-right: 16px;
 }
 
+.logo-link[href]:hover img {
+    transform: scale(1.02);
+    filter: drop-shadow(5px 5px 2px rgba(45, 52, 64, 0.5));
+}
+
+.logo-link[href]:focus-visible img {
+    transform: none;
+    filter: none;
+}
+
+@supports not selector(:focus-visible) {
+    .logo-link[href]:focus img {
+        transform: none;
+        filter: none;
+    }    
+}
+
+.logo-link[href]:active img {
+    transform: none;
+    filter: invert(75%) brightness(300%);
+}
+
 .logo-link img {
     display: block;
+    transition: filter 0.4s, transform 0.4s;
 }
 
 .action-list {
@@ -400,6 +423,19 @@ body {
     margin-left: auto;
     margin-right: 16px;
     font-weight: 700;
+    transition: all 0.2s;
+}
+
+.phone-link:hover {
+    text-decoration: underline;
+    text-shadow: 1px 1px 5px rgb(45, 52, 64, 0.7);
+}
+
+.phone-link:active {
+    color: #FCFCFC;
+    transform: scale(0.95);
+    text-decoration: none;
+    text-shadow: none;
 }
 
 .action-item > button {
@@ -1337,7 +1373,7 @@ body {
     font-weight: 700;
     line-height: 20px;
     color: #2D3440;
-
+    padding-right: 18px;
 }
 
 .tooltip-button {
@@ -1373,7 +1409,6 @@ body {
     line-height: 16px;
     border: 1px solid #B9B9B9;
     border-radius: 1px;
-    /* box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18); */
     position: absolute;
     left: 100%;
     margin-left: 9px;
@@ -1384,30 +1419,16 @@ body {
 .tooltip-text::before {
     content: "";
     display: block;
-    width: 0;
-    height: 12px;
-    border-left: 1px solid #FCFCFC;
+    width: 8px;
+    height: 15px;
+    background-image: url("../images/triangle.svg");
     position: absolute;
-    left: -1px;
-    top: 11px;
-}
-
-.tooltip-arrow {
-    width: 10px;
-    height: 10px;
-    border: 1px solid #B9B9B9;
-    background-color: #FCFCFC;
-    transform: translateX(4px) rotate(45deg);
-    position: absolute;
-    top: 2px;
-    left: 100%;
-    display: none;
+    left: -8px;
+    top: 9px;
 }
 
 .tooltip-button:hover ~ .tooltip-text,
-.tooltip-button:focus-visible ~ .tooltip-text,
-.tooltip-button:hover ~ .tooltip-arrow,
-.tooltip-button:focus-visible ~ .tooltip-arrow {
+.tooltip-button:focus-visible ~ .tooltip-text {
     display: block;
 }
 
@@ -1417,33 +1438,11 @@ body {
     }    
 }
 
-/*.delivery-form .delivery-form-date {
-    margin-right: 16px;
-}*/
-
 .delivery-form .delivery-form-address {
     margin-top: 20px;
     margin-bottom: 28px;
     width: 100%;
 }
-
-/*.delivery-form-date label::after,
-.delivery-form-address label::after {
-    content: url("../images/form/info.svg");
-    width: 16px;
-    height: 16px;
-    transform: scale(0.875);
-}*/
-
-
-
-/*.delivery-form-date input {
-    width: 117px;
-}*/
-
-/*.delivery-form-phone input {
-    width: 287px;
-}*/
 
 .contacts {
     padding: 64px;
@@ -2258,25 +2257,25 @@ body {
     transform: rotate(180deg);
 }
 
-.pagination-link:not(.pagination-current-page):hover {
+.pagination-link:not(.pagination-current-page):not(.pagination-disabled):hover {
     background-color: rgba(252, 252, 252, 0.5);
 }
 
-.pagination-link:not(.pagination-current-page):focus-visible {
+.pagination-link:not(.pagination-current-page):not(.pagination-disabled):focus-visible {
     background-color: rgba(252, 252, 252, 0.3);
     border-color: #2D3440;
     outline: none;
 }
 
 @supports not selector(:focus-visible) {
-    .pagination-link:not(.pagination-current-page):focus {
+    .pagination-link:not(.pagination-current-page):not(.pagination-disabled):focus {
         background-color: rgba(252, 252, 252, 0.3);
         border-color: #2D3440;
         outline: none;
     }    
 }
 
-.pagination-link:not(.pagination-current-page):active {
+.pagination-link:not(.pagination-current-page):not(.pagination-disabled):active {
     background-color: rgba(252, 252, 252, 0.5);
     border-color: #FCFCFC;
 }

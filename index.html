@@ -177,7 +177,7 @@
                 </button>
               </div>
             </div>
-          </div>        
+          </div>
           <div class="bottom-container">
             <ol class="slider-pagination">
               <li class="pagination-item">
@@ -333,9 +333,8 @@
                 <span class="form-label">
                   <label for="delivery-date">Дата</label>
                   <span class="tooltip">
-                    <button class="tooltip-button" type="button"></button>
-                    <span class="tooltip-arrow"></span>
-                    <span class="tooltip-text">Укажите желаемую дату доставки</span>
+                    <button class="tooltip-button" type="button" aria-labelled="tooltip-text-date"></button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-text-date">Укажите желаемую дату доставки</span>
                   </span>
                 </span>
                 <input id="delivery-date" type="text" name="delivery-date" placeholder="01.04.2020">  
@@ -350,9 +349,8 @@
                 <span class="form-label">
                   <label for="delivery-address">Адрес</label>
                   <span class="tooltip">
-                    <button class="tooltip-button" type="button"></button>
-                    <span class="tooltip-arrow"></span>
-                    <span class="tooltip-text">Укажите желаемую дату доставки</span>
+                    <button class="tooltip-button" type="button" aria-labelled-by="tooltip-text-address"></button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-text-address">Введите название улицы, дома и квартиры</span>
                   </span>
                 </span>
                 <input id="delivery-address" type="text" name="delivery-address" placeholder="ул. Большая Конюшенная, 19/8">  

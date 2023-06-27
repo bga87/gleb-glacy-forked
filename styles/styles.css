@@ -176,23 +176,24 @@ body {
     position: relative;
 }
 
-.search-form input {
+.search-input {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
     color: inherit;
-    padding: 13px 30px 13px 15px;
+    padding: 13px 33px 13px 15px;
     border: 1px solid #B9B9B9;
     border-radius: 4px;
 }
 
 .search-clear-button {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
     position: absolute;
-    right: 13px;
-    top: 16px;
+    right: 9px;
+    top: 12px;
     background-color: transparent;
     background-image: url("../images/form/cross.svg");
     background-position: center;
@@ -244,7 +245,7 @@ body {
 .cart-item {
     display: grid;
     column-gap: 16px;
-    grid-template-columns: 46px 148px 87px 16px;
+    grid-template-columns: 46px 148px 83px 24px;
     align-items: center;
 }
 
@@ -274,33 +275,30 @@ body {
 }
 
 .cart-delete-button {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
     border: none;
     background-color: transparent;
     background-image: url("../images/form/cross.svg");
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    transition: transform 0.2s, filter 0.2s;
+    transition: all 0.1s;
 }
 
 .cart-delete-button:hover {
-    filter: drop-shadow(0px 0px 1px #2D3440);
-    transform: scale(1.25);
+    transform: scale(1.2);
+    box-shadow: 1px 1px 3px #2D3440;
 }
 
 .cart-delete-button:focus-visible {
     outline: 2px solid #2D3440;
-    filter: none;
-    transform: none;
 }
 
 @supports not selector(:focus-visible) {
     .cart-delete-button:focus {
         outline: 2px solid #2D3440;
-        filter: none;
-        transform: none;
     }    
 }
 
@@ -469,16 +467,23 @@ body {
     margin-left: auto;
     margin-right: 16px;
     font-weight: 700;
-    transition: all 0.2s;
+    transition: all 0.1s;
 }
 
-.phone-link:hover {
+.phone-link:hover,
+.contacts-phone:hover {
     text-decoration: underline;
     text-shadow: 1px 1px 1px rgb(45, 52, 64, 0.7);
 }
 
 .phone-link:active {
     color: #FCFCFC;
+    transform: scale(0.95);
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.contacts-phone:active {
     transform: scale(0.95);
     text-decoration: none;
     text-shadow: none;
@@ -664,6 +669,8 @@ body {
     padding: 0;
     list-style-type: none;
     display: flex;
+    max-width: 625px;
+    overflow: hidden;
 }
 
 .slider-image-list img {
@@ -672,6 +679,7 @@ body {
 
 .slider-image-list li {
     position: relative;
+    flex-shrink: 0;
 }
 
 .slider-image-current {
@@ -1041,6 +1049,7 @@ body {
 
 .about {
     padding: 24px;
+    background-color: #F0D4BC;
     background-image: url("../images/background/waffle.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1122,6 +1131,7 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
+    background-color: #FFFFFF;
 }
 
 .blog-excerpt-hint {
@@ -1165,6 +1175,7 @@ body {
 .newsletter {
     width: 570px;
     padding: 6px;
+    background-color: #9EB4F7;
     background-image: url("../images/background/stripes.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -1205,12 +1216,13 @@ body {
 
 .email-input {
     width: 332px;
+    flex-shrink: 0;
 }
 
 .email-input::placeholder,
 .delivery-form input::placeholder,
 .signin-form input::placeholder,
-.search-form input::placeholder,
+.search-input::placeholder,
 .feedback-form input::placeholder,
 .feedback-form textarea::placeholder {
     color: #B9B9B9;
@@ -1220,7 +1232,8 @@ body {
 .email-input:hover,
 .delivery-form input:hover,
 .signin-form input:hover,
-.search-form input:hover,
+.search-input:hover,
+.search-clear-button:hover ~ .search-input,
 .feedback-form input:hover,
 .feedback-form textarea:hover {
     border-color: #2D3440;
@@ -1248,12 +1261,12 @@ body {
     }
 }
 
-.search-form input:focus-visible {
+.search-input:focus-visible {
     outline: none;   
 }
 
 @supports not selector(:focus-visible) {
-    .search-form input:focus {
+    .search-input:focus {
         outline: none;
     }
 }
@@ -1261,7 +1274,7 @@ body {
 .email-input:disabled,
 .delivery-form input:disabled,
 .signin-form input:disabled,
-.search-form input:disabled,
+.search-input:disabled,
 .feedback-form input:disabled,
 .feedback-form textarea:disabled {
     background-color: #E7E7E7;
@@ -1303,22 +1316,22 @@ body {
     cursor: pointer;
 }
 
-.send-form-button:hover,
+.send-form-button:not(:disabled):hover,
 .feedback-button:hover,
 .cart-purchase-button:hover,
-.signin-button:hover,
-.feedback-submit-button:hover {
+.signin-button:not(:disabled):hover,
+.feedback-submit-button:not(:disabled):hover {
     background-color: rgba(252, 252, 252, 0.3);
     color: #2D3440;
     border-color: #FF2F64;
     box-shadow: none;
 }
 
-.send-form-button:focus-visible,
+.send-form-button:not(:disabled):focus-visible,
 .feedback-button:focus-visible,
 .cart-purchase-button:focus-visible,
-.signin-button:focus-visible,
-.feedback-submit-button:focus-visible {
+.signin-button:not(:disabled):focus-visible,
+.feedback-submit-button:not(:disabled):focus-visible {
     border: 2px solid #2D3440;
     margin: 2px;
     color: #FCFCFC;
@@ -1328,11 +1341,11 @@ body {
 }
 
 @supports not selector(:focus-visible) {
-    .send-form-button:focus,
+    .send-form-button:not(:disabled):focus,
     .feedback-button:focus,
     .cart-purchase-button:focus,
-    .signin-button:focus,
-    .feedback-submit-button:focus {
+    .signin-button:not(:disabled):focus,
+    .feedback-submit-button:not(:disabled):focus {
         border: 2px solid #2D3440;
         margin: 2px;
         color: #FCFCFC;
@@ -1342,11 +1355,11 @@ body {
     }    
 }
 
-.send-form-button:active,
+.send-form-button:not(:disabled):active,
 .feedback-button:active,
 .cart-purchase-button:active,
-.signin-button:active,
-.feedback-submit-button:active {
+.signin-button:not(:disabled):active,
+.feedback-submit-button:not(:disabled):active {
     border: 2px solid #2D3440;
     margin: 2px;
     color: #FCFCFC;
@@ -1354,10 +1367,21 @@ body {
     box-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
 }
 
+.send-form-button:disabled,
+.signin-button:disabled,
+.feedback-submit-button:disabled {
+    border: 4px solid rgba(185, 185, 185, 0.30);
+    background-color: #B9B9B9;
+    font-weight: 400;
+    color: #565C66;
+    cursor: default;
+}
+
 .delivery {
     padding: 64px 64px 64px 100px;
     display: flex;
     justify-content: space-between;
+    background-color: #FFFFFF;
     background-image: url("../images/background/delivery-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -1401,8 +1425,12 @@ body {
 .delivery-form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+/*    justify-content: center;*/
+    justify-content: space-between;
+    align-items: flex-end;
     column-gap: 16px;
+
+    row-gap: 20px;
 }
 
 .delivery-form p {
@@ -1427,6 +1455,12 @@ body {
 
 .delivery-form input {
     width: 100%;
+}
+
+.delivery-form .send-form-button {
+    margin: 0 auto;
+    margin-top: 8px;
+
 }
 
 .form-label {
@@ -1499,13 +1533,14 @@ body {
 }
 
 .delivery-form .delivery-form-address {
-    margin-top: 20px;
-    margin-bottom: 28px;
+/*    margin-top: 20px;*/
+/*    margin-bottom: 28px;*/
     width: 100%;
 }
 
 .contacts {
     padding: 64px;
+    background-color: #DDD2D2;
     background-image: url("../images/background/cones-in-holder.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -1541,6 +1576,7 @@ body {
 
 .contacts-phone {
     text-decoration: none;
+    transition: all 0.2s;
 }
 
 .working-hours {
@@ -1784,42 +1820,39 @@ body {
 
 .modal-close-button {
     position: absolute;
-    top: 34px;
-    right:34px;
-    width: 16px;
-    height: 16px;
-    padding: 0;
+    top: 28px;
+    right:28px;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
     border: none;
     background-color: transparent;
     background-image: url("../images/form/cross.svg");
     background-position: center;
     background-repeat: no-repeat;
-    transform: scale(1.25);
+    background-origin: content-box;
+    background-size: contain;
     cursor: pointer;
-    transition: transform 0.2s, filter 0.2s;
+    transition: all 0.1s;
 }
 
 .modal-close-button:hover {
-    filter: drop-shadow(0px 0px 2px #2D3440);
-    transform: scale(1.75);
+    transform: scale(1.2);
+    box-shadow: 1px 1px 3px #2D3440;
 }
 
 .modal-close-button:focus-visible {
     outline: 2px solid #2D3440;
-    filter: none;
-    transform: scale(1.25);
 }
 
 @supports not selector(:focus-visible) {
     .modal-close-button:focus {
         outline: 2px solid #2D3440;
-        filter: none;
-        transform: scale(1.25);
     }    
 }
 
 .modal-close-button:active {
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .modal-feedback-text {
@@ -1963,6 +1996,7 @@ body {
     background-image: url("../images/form/arrow-down.svg");
     background-repeat: no-repeat;
     background-position: right 11px center;
+    cursor: pointer;
 }
 
 .select-control:hover {
@@ -2143,6 +2177,10 @@ body {
     background-color: transparent;
 }
 
+.radio-input:not(:disabled) ~ .radio-marker {
+    cursor: pointer;
+}
+
 /* Предзагрузка светлой иконки для смены состояний */
 .radio-marker::before {
     content: url("../images/form/radio-empty-light.svg");
@@ -2204,6 +2242,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
+}
+
+.checkbox-input:not(:disabled) ~ .checkbox-marker {
+    cursor: pointer;
 }
 
 /* Предзагрузка светлой иконки для смены состояний */

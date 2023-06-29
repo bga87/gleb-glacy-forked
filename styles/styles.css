@@ -939,6 +939,7 @@ body {
     padding-left: 36px;
     border-radius: 16px;
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
 }
 
